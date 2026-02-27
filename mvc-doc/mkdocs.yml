@@ -1,0 +1,15 @@
+site_name: Documentation CSB Blogue
+theme:
+  name: material
+
+nav:
+      - Introduction:
+        - Présentation: index.md
+        - Installation: installation.md
+        - Guide utilisateur: guide-utilisateur.md
+      
+      - Développement:
+        - Developpement: developpemenent.md
+        - Architecture MVC: architecture.md
+        - Base de données: base-donnees.md
+        - Sécurité: securite.md
