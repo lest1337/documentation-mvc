@@ -421,4 +421,4 @@ echo json_encode($users, JSON_UNESCAPED_UNICODE);
 
 ---
 
-Voir aussi : [Installation](../installation.md), [Modèles](../api/modeles.md)
+Voir aussi : [Installation](installation.md), [Développement](developpement.md)

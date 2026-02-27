@@ -271,4 +271,4 @@ L'application suit ces principes :
 
 ---
 
-Voir aussi : [Guide Utilisateur](guide-utilisateur.md), [API & Modèles](api/modeles.md)
+Voir aussi : [Guide Utilisateur](guide-utilisateur.md), [Développement](developpement.md)
