@@ -1,0 +1,1176 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../architecture/">
+      
+      
+        <link rel="next" href="../securite/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+    
+    
+      
+        <title>Base de données - Documentation CSB Blogue</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#base-de-donnees" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Documentation CSB Blogue" class="md-header__button md-logo" aria-label="Documentation CSB Blogue" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentation CSB Blogue
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Base de données
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Documentation CSB Blogue" class="md-nav__button md-logo" aria-label="Documentation CSB Blogue" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Documentation CSB Blogue
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Introduction
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Présentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guide-utilisateur/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guide utilisateur
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Développement
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Développement
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../developpement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developpement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture MVC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Base de données
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Base de données
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#base-et-encodage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Base et encodage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tables-et-colonnes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tables et colonnes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tables et colonnes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        USERS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#posts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POSTS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COMMENTS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relations-prose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relations (prose)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ddl-de-reference-extrait-du-depot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DDL de référence (extrait du dépôt)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#donnees-de-demonstration-dbblogextsql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Données de démonstration (db/blog.ext.sql)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemples-de-requetes-schema-actuel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemples de requêtes (schéma actuel)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exemples de requêtes (schéma actuel)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#commentaires-dun-article-avec-nom-dutilisateur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commentaires d’un article avec nom d’utilisateur
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nombre-de-commentaires-par-article" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nombre de commentaires par article
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recherche-simple-dans-les-titres-darticles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recherche simple dans les titres d’articles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mots-de-passe-cote-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mots de passe côté application
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sauvegarde-et-restauration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sauvegarde et restauration
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../securite/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sécurité
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#base-et-encodage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Base et encodage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tables-et-colonnes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tables et colonnes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tables et colonnes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        USERS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#posts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POSTS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        COMMENTS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relations-prose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relations (prose)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ddl-de-reference-extrait-du-depot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DDL de référence (extrait du dépôt)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#donnees-de-demonstration-dbblogextsql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Données de démonstration (db/blog.ext.sql)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemples-de-requetes-schema-actuel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Exemples de requêtes (schéma actuel)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exemples de requêtes (schéma actuel)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#commentaires-dun-article-avec-nom-dutilisateur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commentaires d’un article avec nom d’utilisateur
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nombre-de-commentaires-par-article" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Nombre de commentaires par article
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recherche-simple-dans-les-titres-darticles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recherche simple dans les titres d’articles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mots-de-passe-cote-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mots de passe côté application
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sauvegarde-et-restauration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sauvegarde et restauration
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="base-de-donnees">Base de données</h1>
+<p>Référence alignée sur les scripts du dépôt : <code>db/blog.sql</code> (schéma) et <code>db/blog.ext.sql</code> (données de démonstration).</p>
+<h2 id="base-et-encodage">Base et encodage</h2>
+<ul>
+<li><strong>Nom de la base</strong> : <code>blog</code> (recréée par <code>blog.sql</code> : suppression puis création).</li>
+<li><strong>Moteur</strong> : tables créées par défaut selon la configuration MySQL du serveur (en pratique InnoDB).</li>
+<li><strong>Jeu de caractères</strong> : non forcé dans <code>blog.sql</code> ; en production, prévoir <code>utf8mb4</code> explicitement si besoin.</li>
+</ul>
+<h2 id="tables-et-colonnes">Tables et colonnes</h2>
+<h3 id="users"><code>USERS</code></h3>
+<table>
+<thead>
+<tr>
+<th>Colonne</th>
+<th>Type (script)</th>
+<th>Contraintes / défaut</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>USER_ID</code></td>
+<td><code>INT</code></td>
+<td><code>AUTO_INCREMENT</code>, clé primaire</td>
+<td>Identifiant</td>
+</tr>
+<tr>
+<td><code>USERNAME</code></td>
+<td><code>VARCHAR(32)</code></td>
+<td></td>
+<td>Nom affiché</td>
+</tr>
+<tr>
+<td><code>EMAIL</code></td>
+<td><code>VARCHAR(64)</code></td>
+<td></td>
+<td>Email (connexion)</td>
+</tr>
+<tr>
+<td><code>PSSWRD</code></td>
+<td><code>VARCHAR(128)</code></td>
+<td></td>
+<td>Mot de passe haché (voir application PHP)</td>
+</tr>
+<tr>
+<td><code>IS_ADMIN</code></td>
+<td><code>TINYINT(1)</code></td>
+<td>défaut <code>0</code></td>
+<td>Droit administrateur</td>
+</tr>
+<tr>
+<td><code>IS_RESTRICTED</code></td>
+<td><code>TINYINT(1)</code></td>
+<td>défaut <code>0</code></td>
+<td>Compte restreint (ex. ne peut plus commenter)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="posts"><code>POSTS</code></h3>
+<table>
+<thead>
+<tr>
+<th>Colonne</th>
+<th>Type (script)</th>
+<th>Contraintes / défaut</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>POST_ID</code></td>
+<td><code>INT</code></td>
+<td><code>AUTO_INCREMENT</code>, clé primaire</td>
+<td>Identifiant</td>
+</tr>
+<tr>
+<td><code>TITLE</code></td>
+<td><code>VARCHAR(32)</code></td>
+<td></td>
+<td>Titre</td>
+</tr>
+<tr>
+<td><code>CONTENT</code></td>
+<td><code>TEXT</code></td>
+<td></td>
+<td>Corps de l’article</td>
+</tr>
+<tr>
+<td><code>PUBLISH_DATE</code></td>
+<td><code>DATETIME</code></td>
+<td>défaut <code>NOW()</code></td>
+<td>Date de publication</td>
+</tr>
+</tbody>
+</table>
+<p>Il n’y a <strong>pas</strong> de colonne auteur dans le schéma SQL livré : l’application ne relie pas formellement un article à un <code>USER_ID</code> au niveau base dans ce fichier.</p>
+<h3 id="comments"><code>COMMENTS</code></h3>
+<table>
+<thead>
+<tr>
+<th>Colonne</th>
+<th>Type (script)</th>
+<th>Contraintes / défaut</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>COMMENT_ID</code></td>
+<td><code>INT</code></td>
+<td><code>AUTO_INCREMENT</code>, clé primaire</td>
+<td>Identifiant</td>
+</tr>
+<tr>
+<td><code>CONTENT</code></td>
+<td><code>TEXT</code></td>
+<td></td>
+<td>Texte du commentaire</td>
+</tr>
+<tr>
+<td><code>USER_ID</code></td>
+<td><code>INT</code></td>
+<td><code>FOREIGN KEY</code> → <code>USERS(USER_ID)</code></td>
+<td>Auteur du commentaire</td>
+</tr>
+<tr>
+<td><code>POST_ID</code></td>
+<td><code>INT</code></td>
+<td><code>FOREIGN KEY</code> → <code>POSTS(POST_ID)</code></td>
+<td>Article commenté</td>
+</tr>
+</tbody>
+</table>
+<p>Les clés étrangères sont déclarées <strong>sans</strong> <code>ON DELETE CASCADE</code> dans <code>blog.sql</code> : le comportement à la suppression d’un post ou d’un utilisateur dépend des règles MySQL et du code applicatif.</p>
+<h2 id="relations-prose">Relations (prose)</h2>
+<ul>
+<li>Un <strong>utilisateur</strong> (<code>USERS</code>) peut être référencé par <strong>plusieurs</strong> commentaires (<code>COMMENTS.USER_ID</code>).</li>
+<li>Un <strong>article</strong> (<code>POSTS</code>) peut être référencé par <strong>plusieurs</strong> commentaires (<code>COMMENTS.POST_ID</code>).</li>
+<li>Chaque <strong>commentaire</strong> référence au plus un utilisateur et un article via les clés étrangères.</li>
+</ul>
+<h2 id="ddl-de-reference-extrait-du-depot">DDL de référence (extrait du dépôt)</h2>
+<p>Le fichier source canonique est <code>db/blog.sql</code>. En résumé, il contient notamment :</p>
+<pre><code class="language-sql">USE blog;
+
+CREATE TABLE IF NOT EXISTS USERS (
+    USER_ID INT AUTO_INCREMENT PRIMARY KEY,
+    USERNAME VARCHAR(32),
+    EMAIL VARCHAR(64),
+    PSSWRD VARCHAR(128),
+    IS_ADMIN TINYINT(1) DEFAULT 0,
+    IS_RESTRICTED TINYINT(1) DEFAULT 0
+);
+
+CREATE TABLE IF NOT EXISTS POSTS (
+    POST_ID INT AUTO_INCREMENT PRIMARY KEY,
+    TITLE VARCHAR(32),
+    CONTENT TEXT,
+    PUBLISH_DATE DATETIME DEFAULT NOW()
+);
+
+CREATE TABLE IF NOT EXISTS COMMENTS (
+    COMMENT_ID INT AUTO_INCREMENT PRIMARY KEY,
+    CONTENT TEXT,
+    USER_ID INT,
+    POST_ID INT,
+    FOREIGN KEY (USER_ID) REFERENCES USERS(USER_ID),
+    FOREIGN KEY (POST_ID) REFERENCES POSTS(POST_ID)
+);
+</code></pre>
+<h2 id="donnees-de-demonstration-dbblogextsql">Données de démonstration (<code>db/blog.ext.sql</code>)</h2>
+<p>Ce fichier insère des lignes dans <code>USERS</code>, <code>POSTS</code> et <code>COMMENTS</code> <strong>après</strong> que le schéma existe. Les mots de passe sont des chaînes hachées de démonstration : en environnement réel, régénérez des utilisateurs via l’application ou adaptez les inserts.</p>
+<h2 id="exemples-de-requetes-schema-actuel">Exemples de requêtes (schéma actuel)</h2>
+<h3 id="commentaires-dun-article-avec-nom-dutilisateur">Commentaires d’un article avec nom d’utilisateur</h3>
+<pre><code class="language-sql">SELECT c.COMMENT_ID, c.CONTENT, c.USER_ID, u.USERNAME
+FROM COMMENTS c
+JOIN USERS u ON u.USER_ID = c.USER_ID
+WHERE c.POST_ID = :postId
+ORDER BY c.COMMENT_ID;
+</code></pre>
+<h3 id="nombre-de-commentaires-par-article">Nombre de commentaires par article</h3>
+<pre><code class="language-sql">SELECT p.POST_ID, p.TITLE, COUNT(c.COMMENT_ID) AS nb_commentaires
+FROM POSTS p
+LEFT JOIN COMMENTS c ON c.POST_ID = p.POST_ID
+GROUP BY p.POST_ID, p.TITLE
+ORDER BY nb_commentaires DESC;
+</code></pre>
+<h3 id="recherche-simple-dans-les-titres-darticles">Recherche simple dans les titres d’articles</h3>
+<pre><code class="language-sql">SELECT POST_ID, TITLE, PUBLISH_DATE
+FROM POSTS
+WHERE TITLE LIKE :motcle
+ORDER BY PUBLISH_DATE DESC;
+</code></pre>
+<h2 id="mots-de-passe-cote-application">Mots de passe côté application</h2>
+<p>L’application PHP utilise <code>password_hash()</code> et <code>password_verify()</code> avec l’algorithme passé dans le code (voir <code>app/models/utilisateur.inc.php</code>, constante <code>CRYPT_SHA256</code> dans ce projet). Les valeurs dans <code>blog.ext.sql</code> sont indépendantes et sertes à la démo SQL.</p>
+<h2 id="sauvegarde-et-restauration">Sauvegarde et restauration</h2>
+<pre><code class="language-bash">mysqldump -h … -u … -p blog &gt; sauvegarde_blog.sql
+mysql -h … -u … -p blog &lt; sauvegarde_blog.sql
+</code></pre>
+<hr />
+<p>Voir aussi : <a href="../installation/">Installation</a>, <a href="../developpement/">Développement</a>, <a href="../securite/">Sécurité</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
