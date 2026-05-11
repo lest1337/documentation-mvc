@@ -1,63 +1,49 @@
 # CSB Blog
 
-Bienvenue dans la documentation de **CSB Blog**, un blog minimaliste et léger développé en PHP natif suivant une architecture MVC (Model-View-Controller).
+Bienvenue dans la documentation de **CSB Blog**, un blog minimaliste développé en **PHP** sans framework, selon une architecture **MVC** (Modèle–Vue–Contrôleur).
 
 ## Vue d'ensemble
 
-CSB Blog est une plateforme de blogging simple et efficace conçue à des fins pédagogiques. Le projet propose une base propre, une architecture compréhensible et maintenable, ainsi qu'une grande extensibilité et personnalisabilité.
+Le projet sert de base pédagogique : code lisible, séparation Modèle / Vue / Contrôleur, et extension possible sans dépendances Composer obligatoires.
 
 ### Technologies principales
 
-- **Langage**: PHP 7+
-- **Base de données**: MySQL
-- **Architecture**: MVC (Model-View-Controller)
-- **Dépendances externes**: Aucune
+| Élément | Détail |
+|--------|--------|
+| Langage | PHP 7.4 ou supérieur |
+| Base de données | MySQL 8 (ex. conteneur Docker du dépôt) |
+| Architecture | MVC |
+| Dépendances PHP | Aucune (PHP natif, PDO) |
 
 ## Fonctionnalités principales
 
-- Affichage des articles (posts) avec paginaison
-- Système de commentaires sur les articles
-- Gestion des utilisateurs (inscription, connexion, profil)
-- Recherche d'articles
-- Tableau de bord administrateur
-- Système de journalisation (logging) des actions
-- Interface utilisateur responsive
+- Liste des articles avec pagination
+- Lecture d’un article et commentaires associés
+- Inscription, connexion, déconnexion, profil
+- Recherche d’articles
+- Espace administrateur (création d’articles, suppression, gestion des commentaires et des utilisateurs, restriction de comptes)
+- Journalisation des actions dans des fichiers datés sous `logs/`
 
-## Points clés
+## Sécurité et qualité (aperçu honnête)
 
-### Sécurité
+- **Requêtes SQL** : PDO avec requêtes préparées et paramètres nommés
+- **Affichage** : usage d’`htmlspecialchars()` pour limiter le risque XSS dans les vues
+- **Mots de passe** : `password_hash` / `password_verify` avec l’algorithme configuré dans le code (`CRYPT_SHA256`)
+- **Sessions** : authentification et contrôle admin côté serveur
 
-- Sécurisation des routes avec vérification d'authentification
-- Protection contre les injections SQL via les requêtes préparées PDO
-- Protection contre les attaques CSRF
-- Hachage sécurisé des mots de passe avec CRYPT_SHA256
+**Limites connues** : les formulaires ne mettent pas en œuvre de jetons **CSRF** ; en environnement exposé, il convient d’ajouter une protection CSRF et les en-têtes HTTP adaptés (voir [Sécurité](securite.md)).
 
-### Architecture propre
+## Organisation de cette documentation
 
-- Séparation claire entre Modèles, Vues et Contrôleurs
-- Routage simple basé sur les paramètres GET
-- Pas de framework, code PHP natif pour une meilleure compréhension
-- Structure organisée et facilement extensible
-
-## À propos du projet
-
-Ce projet a été créé à titre d'exemple pédagogique pour montrer comment construire une application PHP structurée et sécurisée sans dépendre d'un framework externe. Il est idéal pour apprendre les concepts fondamentaux du développement web.
-
-## Navigation
-
-Cette documentation est organisée en plusieurs sections :
-
-- **Installation**: Comment configurer et lancer le projet
-- **Architecture**: Description de la structure MVC et de l'organisation du code
-- **Guide Utilisateur**: Utilisation de l'application (pour les utilisateurs finaux)
-- **API & Modèles**: Documentation technique détaillée des modèles
-- **Contrôleurs**: Documentation des contrôleurs et des routes
-- **Base de Données**: Schéma et structure des données
-- **Sécurité**: Mesures de sécurité implémentées
-- **Développement**: Guide pour contribuer et étendre le projet
+| Section | Rôle (Diátaxis) |
+|--------|------------------|
+| [Installation](installation.md) | Mettre en route le projet (local ou Docker), base de données, logs |
+| [Guide utilisateur](guide-utilisateur.md) | Utiliser le site (compte, articles, commentaires, admin) |
+| [Développement](developpement.md) | Contribuer, conventions, extension du code |
+| [Architecture](architecture.md) | Routage, flux de requête, rôle des dossiers |
+| [Base de données](base-donnees.md) | Schéma réel, relations, exemples SQL |
+| [Sécurité](securite.md) | Mesures en place, risques résiduels, recommandations |
 
 ---
 
-**Version**: 1.0  
-**Dernier mise à jour**: 2026  
-**Auteur**: Equipe de développement
+**Dernière mise à jour** : 2026
